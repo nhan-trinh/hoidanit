@@ -19,7 +19,7 @@
         <div classname="user-infor-container">
           <form method="POST" action="/users/create-user">
             <div classname="pt-3">
-              <h3>Create a new user</h3>
+              <h2>Create a new user:</h2>
             </div>
             <div class="mb-3 mt-3 col-6">
               <label for="username" class="form-label">Username</label>
@@ -63,7 +63,7 @@
           <table class="table table-hover table-bordered">
             <thead>
                 <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th>Action</th>
@@ -71,12 +71,16 @@
               <tbody>
               <% userList.forEach(function(item,index){ %>
               <tr>
-                <th scope="row"><%= index + 1 %></th>
+                <th scope="row"><%= item.id %></th>
                 <td><%= item.name %></td>
                 <td><%= item.email %></td>
                 <td>
                   <button class="btn btn-success">Edit</button>
-                  <button class="btn btn-danger">Delete</button>
+                  <form style="display: inline;" action="/delete-user/<%=item.id %>" method="POST">
+                  <button class="btn btn-danger" type="submit">
+                    Delete
+                  </button>
+                  </form>
                 </td>
               </tr>
               <% }) %>

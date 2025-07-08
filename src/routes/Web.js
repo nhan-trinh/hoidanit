@@ -13,6 +13,7 @@ const initWebRoutes = (app) => {
   router.get("/", homeController.handleHelloWorld); // định nghĩa route cho đường dẫn gốc "/", khi người dùng truy cập vào đường dẫn này, sẽ gọi hàm handleHelloWorld
   router.get("/user", homeController.handleUser); // định nghĩa
   router.post("/users/create-user", homeController.handleCreateUser); // định nghĩa route cho đường dẫn "/user", khi người dùng truy cập vào đường dẫn này, sẽ gọi hàm handleUser
+  router.post("/delete-user/:id", homeController.handleDeleteUser);
   return app.use("/", router); // sử dụng router này cho ứng dụng express tại đường dẫn gốc "/"
 };
 export default initWebRoutes;
