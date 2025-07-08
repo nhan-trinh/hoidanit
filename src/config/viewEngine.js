@@ -8,4 +8,4 @@ const configviewEngine = (app) => { // cấu hình view engine cho ứng dụng
     app.set("views", "./src/views"); // định nghĩa nơi lưu trữ các file view
 }
 
-export default configviewEngine;
+export default configviewEngine; 
