@@ -75,7 +75,10 @@
                 <td><%= item.name %></td>
                 <td><%= item.email %></td>
                 <td>
-                  <button class="btn btn-success">Edit</button>
+                  <a class="btn btn-success" href="/edit-user/<%=item.id %>"  >
+                    Edit
+                  </a>
+                  
                   <form style="display: inline;" action="/delete-user/<%=item.id %>" method="POST">
                   <button class="btn btn-danger" type="submit">
                     Delete
